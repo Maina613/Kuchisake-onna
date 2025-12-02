@@ -122,7 +122,6 @@ p {
     transform: translateY(2px);
 }
 
-/* Manoir : image PNG avec transparence qui remonte pour cacher le logo */
 .temple {
     position: absolute;
     top: 80vh;

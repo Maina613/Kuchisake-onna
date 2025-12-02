@@ -124,34 +124,34 @@ p {
 
 .temple {
     position: absolute;
-    top: 80vh;
-    /* démarre juste sous le bas de la fenêtre */
+    top: 100vh;
     left: 0;
     right: 0;
-    /* un peu plus haut que la fenêtre pour être sûr de couvrir le logo */
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     z-index: 2;
     pointer-events: none;
     transform: translateY(0);
     transition: transform 0.1s linear;
+    width: 100vw;
+    overflow: visible;
 }
 
-/* HALO sur le temple (sur l'image) */
 .temple img {
+    width: 80vw; /* Réduit la largeur */
+    height: auto;
+    display: block;
     position: relative;
-    animation: templeHalo 2s infinite ease-in-out;
 }
-
-/* --- Bouton halo pulsant posé sur le temple --- */
 
 .temple {
-    position: relative; /* important pour permettre le positionnement du bouton */
+    position: relative; 
 }
 
 .click-button {
     position: absolute;
-    top: 67%;               /* ajuste si tu veux placer le bouton ailleurs */
+    top: 67%;             
     left: 46%;
     transform: translate(-50%, -50%);
     width: 18px;
@@ -164,7 +164,6 @@ p {
     z-index: 10;
     pointer-events: auto;
 
-    /* Animation du halo */
     animation: pulseHalo 1.6s infinite ease-out;
 }
 
@@ -322,3 +321,30 @@ body.lit { background-color: rgba(255, 200, 100, 0.3); }
 }
 
 .instruction.hidden { opacity: 0; }
+
+body {
+    min-height: 800vh; 
+}
+
+/* === EFFET DE PLUIE === */
+.rain-container {
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.rain {
+    position: absolute;
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, rgba(174, 194, 224, 0.5));
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}

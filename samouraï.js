@@ -7,6 +7,6 @@ arrowButton.addEventListener('click', () => {
     document.body.style.opacity = '0';
 
     setTimeout(() => {
-        window.location.href = "couloir2.html";
+        window.location.href = "couloir4.html";
     }, 800);
 });

@@ -73,7 +73,7 @@ body {
 .click-button {
     position: absolute;
     top: 55%;
-    left: 48%;
+    left: 74%;
     transform: translate(-50%, -50%);
     width: 18px;
     height: 18px;
@@ -102,6 +102,7 @@ body {
     }
 }
 
+/* Paupières pour fermeture des yeux */
 .eyelid {
     position: fixed;
     left: 0;

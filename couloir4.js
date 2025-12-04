@@ -37,11 +37,8 @@ const eyelidTop = document.querySelector('.eyelid-top');
 const eyelidBottom = document.querySelector('.eyelid-bottom');
 
 clickButton.addEventListener('click', () => {
-    // Déclenche la fermeture des yeux
-    eyelidTop.classList.add('closing');
-    eyelidBottom.classList.add('closing');
 
     setTimeout(() => {
-        window.location.href = "AKAE.html";
-    }, 1200); // ← Changé de 800 à 1200
+        window.location.href = "couloir5.html";
+    }, 1200);
 });

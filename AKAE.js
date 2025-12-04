@@ -1,0 +1,1 @@
+console.log('Page de transition chargée');

@@ -33,12 +33,14 @@ window.addEventListener('load', () => {
 });
 
 const clickButton = document.querySelector('.click-button');
+const eyelidTop = document.querySelector('.eyelid-top');
+const eyelidBottom = document.querySelector('.eyelid-bottom');
 
 clickButton.addEventListener('click', () => {
-    document.body.style.transition = 'opacity 0.8s ease';
-    document.body.style.opacity = '0';
+    eyelidTop.classList.add('closing');
+    eyelidBottom.classList.add('closing');
 
     setTimeout(() => {
-        window.location.href = "votre-page-suivante.html"; // Remplacez par le nom de votre page
+        window.location.href = "transition-video.html";
     }, 800);
 });

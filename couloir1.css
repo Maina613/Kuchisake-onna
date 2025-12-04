@@ -101,3 +101,50 @@ body {
                     0 0 0 0 rgba(250, 204, 21, 0);
     }
 }
+
+/* Paupières pour fermeture des yeux */
+.eyelid {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #000;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.eyelid-top {
+    top: 0;
+    transform: translateY(-100%);
+}
+
+.eyelid-bottom {
+    bottom: 0;
+    transform: translateY(100%);
+}
+
+.eyelid-top.closing {
+    animation: eyelidTopClose 0.8s ease-in forwards;
+}
+
+.eyelid-bottom.closing {
+    animation: eyelidBottomClose 0.8s ease-in forwards;
+}
+
+@keyframes eyelidTopClose {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes eyelidBottomClose {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

@@ -37,10 +37,10 @@ const eyelidTop = document.querySelector('.eyelid-top');
 const eyelidBottom = document.querySelector('.eyelid-bottom');
 
 clickButton.addEventListener('click', () => {
-    document.body.style.transition = 'opacity 0.8s ease';
-    document.body.style.opacity = '0';
+    eyelidTop.classList.add('closing');
+    eyelidBottom.classList.add('closing');
 
     setTimeout(() => {
-        window.location.href = "couloir5.html";
-    }, 800);
+        window.location.href = "seppuku.html";
+    }, 1200);
 });

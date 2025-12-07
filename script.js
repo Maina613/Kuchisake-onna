@@ -1,4 +1,3 @@
-// === CRÉATION DE LA PLUIE ===
 function createRain() {
     const rainContainer = document.getElementById('rainContainer');
     
@@ -14,13 +13,13 @@ function createRain() {
         drop.classList.add('rain');
         
         const leftPosition = Math.random() * 100;
-        const topPosition = Math.random() * 100; // Position verticale aléatoire au départ
+        const topPosition = Math.random() * 100;
         const animationDuration = 0.5 + Math.random() * 0.5;
         const animationDelay = Math.random() * 2;
         const opacity = 0.3 + Math.random() * 0.4;
         
         drop.style.left = leftPosition + '%';
-        drop.style.top = -topPosition + '%'; // Commence au-dessus et en dessous du viewport
+        drop.style.top = -topPosition + '%'; 
         drop.style.animationDuration = animationDuration + 's';
         drop.style.animationDelay = animationDelay + 's';
         drop.style.opacity = opacity;
@@ -31,7 +30,6 @@ function createRain() {
 
 createRain();
 
-// === GESTION DU SCROLL ===
 (function () {
     const introPanel = document.querySelector('.panel-intro');
     const secondPanel = document.querySelector('.panel-second');
@@ -89,7 +87,6 @@ createRain();
     onScroll();
 })();
 
-// === BOUTON CLIQUABLE ===
 const halo = document.querySelector('.click-button');
 
 if (halo) {
@@ -102,7 +99,6 @@ if (halo) {
     });
 }
 
-// === ALLUMETTE (seulement si les éléments existent) ===
 const matchHead = document.getElementById('matchHead');
 const flame = document.getElementById('flame');
 const instruction = document.getElementById('instruction');
@@ -154,7 +150,6 @@ if (matchHead && flame && instruction) {
         }
     });
 
-    // Touch support
     matchHead.addEventListener('touchstart', e => {
         isDragging = true;
         startX = e.touches[0].clientX - currentLeft;

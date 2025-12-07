@@ -74,7 +74,6 @@ p {
     opacity: 0.85;
 }
 
-/* ===== PANEL LOGO + MANOIR ===== */
 .logo-scene {
     position: relative;
     width: 100%;
@@ -139,7 +138,7 @@ p {
 }
 
 .temple img {
-    width: 80vw; /* Réduit la largeur */
+    width: 80vw; 
     height: auto;
     display: block;
     position: relative;
@@ -326,7 +325,6 @@ body {
     min-height: 800vh; 
 }
 
-/* === EFFET DE PLUIE === */
 .rain-container {
     position: fixed;
     inset: 0;

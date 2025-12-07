@@ -33,14 +33,12 @@ window.addEventListener('load', () => {
 });
 
 const clickButton = document.querySelector('.click-button');
-const eyelidTop = document.querySelector('.eyelid-top');
-const eyelidBottom = document.querySelector('.eyelid-bottom');
 
 clickButton.addEventListener('click', () => {
     document.body.style.transition = 'opacity 0.8s ease';
     document.body.style.opacity = '0';
 
     setTimeout(() => {
-        window.location.href = "couloir5.html";
+        window.location.href = "couloir7.html";
     }, 800);
 });

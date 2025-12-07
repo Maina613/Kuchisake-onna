@@ -23,7 +23,6 @@ body {
     object-fit: contain;
 }
 
-/* Pour la vidéo plus tard */
 #motion-video {
     display: none;
     width: 100%;

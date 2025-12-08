@@ -2,8 +2,8 @@ const container = document.getElementById('container');
 const interiorLight = document.getElementById('interior-light');
 const lightGlow = document.getElementById('light-glow');
 
-const MARGIN_X = 15;
-const MARGIN_Y = 15;
+const MARGIN_X = 0; // FIX 2 : Modifier ici pour les marges du faisceau lumineux
+const MARGIN_Y = 0;
 
 container.addEventListener('mousemove', e => {
     const rect = container.getBoundingClientRect();

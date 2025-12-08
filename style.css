@@ -125,7 +125,7 @@ p {
 
 .temple {
   position: absolute;
-  top: 125vh; /* FIX 1 : Jouer sur la hauteur */
+  top: 140vh; /* FIX 1 : Modifier la hauteur pour le positionnement du temple */
   left: 0;
   right: 0;
   display: flex;

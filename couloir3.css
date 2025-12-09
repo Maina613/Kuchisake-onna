@@ -176,7 +176,7 @@ body {
     top: 49%; 
     left: 19.7%; 
     transform: translate(-50%, -50%) rotate(-10deg); 
-    opacity: 80%; 
+    opacity: 45%; 
     z-index: 5; 
     pointer-events: none; 
     mix-blend-mode: multiply; 

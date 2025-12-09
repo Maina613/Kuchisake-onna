@@ -30,6 +30,41 @@ function createRain() {
 
 createRain();
 
+function createThunderEffect() {
+    const lightning = document.getElementById('lightning');
+    const bird = document.getElementById('bird');
+    
+    if (!lightning || !bird) {
+        console.error('Lightning ou bird non trouvé !');
+        return;
+    }
+    
+    function triggerThunder() {
+        console.log('⚡ ÉCLAIR DÉCLENCHÉ !');
+        
+        lightning.classList.add('flash');
+        
+        setTimeout(() => {
+            lightning.classList.remove('flash');
+        }, 600);
+        
+        bird.style.animation = 'birdFly 0.8s ease-out';
+        bird.style.opacity = '1';
+        
+        setTimeout(() => {
+            bird.style.opacity = '0';
+            bird.style.animation = 'none';
+        }, 800);
+        
+        setTimeout(triggerThunder, 4000);
+    }
+    
+    console.log('🌩️ Thunder effect initialisé, premier éclair immédiat !');
+    triggerThunder();
+}
+
+createThunderEffect();
+
 (function () {
     const introPanel = document.querySelector('.panel-intro');
     const secondPanel = document.querySelector('.panel-second');

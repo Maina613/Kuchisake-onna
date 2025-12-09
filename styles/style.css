@@ -10,7 +10,7 @@ body {
     font-family: playfair display, sans-serif;
     color: #fff;
     overflow-x: hidden;
-    background-image: url(./images/sky.png);
+    background-image: url(../images/sky.png);
     background-size: cover;
     background-position: top;
 }

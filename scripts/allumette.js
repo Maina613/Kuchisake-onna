@@ -40,7 +40,7 @@ document.addEventListener('mouseup', () => {
         body.classList.add('lit');
 
         setTimeout(() => {
-            window.location.href = "couloir1.html";
+            window.location.href = "/pages/couloir1.html";
         }, 1000);
 
     } else {

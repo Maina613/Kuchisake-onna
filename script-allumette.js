@@ -37,6 +37,8 @@ document.addEventListener('mouseup', () => {
     matchHead.style.left = maxLeft + 'px'
     matchHead.classList.add('lit')
     flame.classList.add('visible')
+    document.getElementById('interior-image').style.filter = 'brightness(40%)'
+    document.getElementById('lantern-hand').style.display = 'block'
     body.classList.add('lit')
 
     setTimeout(() => {

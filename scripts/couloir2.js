@@ -1,9 +1,10 @@
 const container = document.getElementById('container');
 const interiorLight = document.getElementById('interior-light');
 const lightGlow = document.getElementById('light-glow');
+const lanternHand = document.getElementById('lantern-hand');
 
-const MARGIN_X = 15;
-const MARGIN_Y = 15;
+const MARGIN_X = 0;
+const MARGIN_Y = 0;
 
 container.addEventListener('mousemove', e => {
     const rect = container.getBoundingClientRect();
@@ -25,6 +26,12 @@ container.addEventListener('mousemove', e => {
     lightGlow.style.setProperty('--mouse-y', `${percentY}%`);
 });
 
+// Déplacement horizontal de la lanterne qui suit la souris
+document.addEventListener('mousemove', e => {
+    const mouseXPercent = (e.clientX / window.innerWidth) * 100;
+    lanternHand.style.left = `${mouseXPercent}%`;
+});
+
 window.addEventListener('load', () => {
     interiorLight.style.setProperty('--mouse-x', '50%');
     interiorLight.style.setProperty('--mouse-y', '50%');
@@ -37,6 +44,7 @@ const eyelidTop = document.querySelector('.eyelid-top');
 const eyelidBottom = document.querySelector('.eyelid-bottom');
 
 clickButton.addEventListener('click', () => {
+    // Déclenche la fermeture des yeux
     eyelidTop.classList.add('closing');
     eyelidBottom.classList.add('closing');
 

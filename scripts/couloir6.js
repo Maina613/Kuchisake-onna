@@ -1,9 +1,10 @@
 const container = document.getElementById('container');
 const interiorLight = document.getElementById('interior-light');
 const lightGlow = document.getElementById('light-glow');
+const lanternHand = document.getElementById('lantern-hand');
 
-const MARGIN_X = 15;
-const MARGIN_Y = 15;
+const MARGIN_X = 0;
+const MARGIN_Y = 0;
 
 container.addEventListener('mousemove', e => {
     const rect = container.getBoundingClientRect();
@@ -23,6 +24,12 @@ container.addEventListener('mousemove', e => {
     interiorLight.style.setProperty('--mouse-y', `${percentY}%`);
     lightGlow.style.setProperty('--mouse-x', `${percentX}%`);
     lightGlow.style.setProperty('--mouse-y', `${percentY}%`);
+});
+
+// Déplacement horizontal de la lanterne qui suit la souris
+document.addEventListener('mousemove', e => {
+    const mouseXPercent = (e.clientX / window.innerWidth) * 100;
+    lanternHand.style.left = `${mouseXPercent}%`;
 });
 
 window.addEventListener('load', () => {

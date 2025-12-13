@@ -66,7 +66,6 @@ body {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    filter: drop-shadow(0 0 0px rgba(255, 200, 100, 0.8));
     z-index: 10;
     animation: lanternSway 3s ease-in-out infinite;
     transition: left 0.15s ease-out;

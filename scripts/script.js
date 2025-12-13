@@ -1,29 +1,29 @@
 function createRain() {
     const rainContainer = document.getElementById('rainContainer');
-    
+
     if (!rainContainer) {
         console.error('rainContainer non trouvé !');
         return;
     }
-    
+
     const numberOfDrops = 150;
 
     for (let i = 0; i < numberOfDrops; i++) {
         const drop = document.createElement('div');
         drop.classList.add('rain');
-        
+
         const leftPosition = Math.random() * 100;
         const topPosition = Math.random() * 100;
         const animationDuration = 0.5 + Math.random() * 0.5;
         const animationDelay = Math.random() * 2;
         const opacity = 0.3 + Math.random() * 0.4;
-        
+
         drop.style.left = leftPosition + '%';
-        drop.style.top = -topPosition + '%'; 
+        drop.style.top = -topPosition + '%';
         drop.style.animationDuration = animationDuration + 's';
         drop.style.animationDelay = animationDelay + 's';
         drop.style.opacity = opacity;
-        
+
         rainContainer.appendChild(drop);
     }
 }
@@ -33,33 +33,33 @@ createRain();
 function createThunderEffect() {
     const lightning = document.getElementById('lightning');
     const bird = document.getElementById('bird');
-    
+
     if (!lightning || !bird) {
         console.error('Lightning ou bird non trouvé !');
         return;
     }
-    
+
     function triggerThunder() {
         console.log('⚡ ÉCLAIR DÉCLENCHÉ !');
-        
+
         lightning.classList.add('flash');
-        
+
         setTimeout(() => {
             lightning.classList.remove('flash');
         }, 600);
-        
+
         bird.style.animation = 'birdFly 0.8s ease-out';
         bird.style.opacity = '1';
-        
+
         setTimeout(() => {
             bird.style.opacity = '0';
             bird.style.animation = 'none';
         }, 800);
-        
+
         setTimeout(triggerThunder, 4000);
     }
-    
-    console.log('🌩️ Thunder effect initialisé, premier éclair immédiat !');
+
+    console.log(' Thunder effect initialisé, premier éclair immédiat !');
     triggerThunder();
 }
 
@@ -129,7 +129,7 @@ if (halo) {
         document.body.classList.add('fade-out');
 
         setTimeout(() => {
-            window.location.href = "allumette.html";
+            window.location.href = "../pages/allumette.html";
         }, 800);
     });
 }

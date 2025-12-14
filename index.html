@@ -2,11 +2,11 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kuchisake-onna</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="styles/style.css" />
 </head>
 
 <body>
@@ -27,17 +27,15 @@
         <!-- PANEL 1 : INTRO -->
         <div class="panel panel-intro">
             <div class="panel-content">
-                <h1>Aimez-vous<br>les histoires d'horreur ? </h1>
+                <h1>Aimez-vous<br />les histoires d'horreur ?</h1>
             </div>
         </div>
 
         <!-- PANEL 2 : TEXTE SUIVANT -->
         <div class="panel panel-second">
             <div class="panel-content">
-                <h2>La Maison de la culture du Japon </h2>
-                <p>
-                    présente...
-                </p>
+                <h2>La Maison de la culture du Japon</h2>
+                <p>présente...</p>
             </div>
         </div>
 
@@ -65,6 +63,21 @@
         <span class="arrow">⌄</span>
     </div>
 
+    <button class="sound-toggle" id="soundToggle" aria-label="Son">
+        <svg class="icon-sound icon-on" viewBox="0 0 64 64">
+            <path d="M12 24h10l14-12v40L22 40H12z" fill="currentColor" />
+            <path d="M44 20c4 4 4 20 0 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+            <path d="M52 14c8 8 8 28 0 36" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+        </svg>
+
+        <svg class="icon-sound icon-off" viewBox="0 0 64 64">
+            <path d="M12 24h10l14-12v40L22 40H12z" fill="currentColor" />
+            <line x1="44" y1="20" x2="58" y2="44" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+            <line x1="58" y1="20" x2="44" y2="44" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+        </svg>
+    </button>
+
+    <audio id="thunderSound" src="/sounds/storm.mp3" preload="auto"></audio>
 
     <script src="scripts/script.js"></script>
 </body>

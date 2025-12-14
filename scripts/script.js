@@ -108,14 +108,12 @@ createThunderEffect();
 
 const halo = document.querySelector('.click-button');
 
-if (halo) {
-    halo.addEventListener('click', () => {
-        document.body.classList.add('fade-out');
-        setTimeout(() => {
-            window.location.href = "pages/allumette.html";
-        }, 800);
-    });
-}
+halo.addEventListener('click', () => {
+    document.body.classList.add('fade-out');
+    setTimeout(() => {
+        window.location.href = "pages/allumette.html";
+    }, 800);
+});
 
 const scrollIndicator = document.querySelector('.scroll-indicator');
 

@@ -104,7 +104,7 @@ document.addEventListener('touchend', () => {
       body.style.opacity = '0'
       
       setTimeout(() => {
-        window.location.href = 'couloir1.html'
+        window.location.href = 'couloir1.html'; 
       }, 200)
     }, 150)
   } else {

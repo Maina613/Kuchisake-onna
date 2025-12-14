@@ -112,7 +112,7 @@ if (halo) {
     halo.addEventListener('click', () => {
         document.body.classList.add('fade-out');
         setTimeout(() => {
-            window.location.href = "../pages/allumette.html";
+            window.location.href = "pages/allumette.html";
         }, 800);
     });
 }

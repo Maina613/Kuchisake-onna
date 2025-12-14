@@ -224,3 +224,17 @@ if (matchHead && flame && instruction) {
         }
     });
 }
+
+const scrollIndicator = document.querySelector('.scroll-indicator');
+
+if (scrollIndicator) {
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.body.scrollHeight;
+
+        const atBottom = scrollTop + windowHeight >= documentHeight - 50;
+
+        scrollIndicator.classList.toggle('hidden', atBottom);
+    });
+}

@@ -8,12 +8,31 @@
     <link rel="stylesheet" href="../styles/samouraï.css">
 </head>
 <body>
-    <div id="video-container">
-        <img id="placeholder-image" src="../images/akae.png" alt="Kuchisake-onna">
-        
+<div id="video-container">
+        <video id="motion-video" autoplay muted playsinline>
+            <source src="../videos/Samouraï.mp4" type="video/mp4">
+        </video>
+
+        <button class="sound-toggle" id="soundToggle" aria-label="Son">
+            <svg class="icon-sound icon-on" viewBox="0 0 64 64">
+                <path d="M12 24h10l14-12v40L22 40H12z" fill="currentColor" />
+                <path d="M44 20c4 4 4 20 0 24" fill="none" stroke="currentColor" stroke-width="4"
+                    stroke-linecap="round" />
+                <path d="M52 14c8 8 8 28 0 36" fill="none" stroke="currentColor" stroke-width="4"
+                    stroke-linecap="round" />
+            </svg>
+
+            <svg class="icon-sound icon-off" viewBox="0 0 64 64">
+                <path d="M12 24h10l14-12v40L22 40H12z" fill="currentColor" />
+                <line x1="44" y1="20" x2="58" y2="44" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+                <line x1="58" y1="20" x2="44" y2="44" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+            </svg>
+        </button>
+
         <div id="arrow-button">
             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
             </svg>
         </div>
     </div>

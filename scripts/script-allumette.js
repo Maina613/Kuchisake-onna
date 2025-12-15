@@ -98,7 +98,6 @@ document.addEventListener('touchend', () => {
 
     body.classList.add('lit')
 
-    // Transition très rapide
     setTimeout(() => {
       body.style.transition = 'opacity 0.2s ease-out'
       body.style.opacity = '0'

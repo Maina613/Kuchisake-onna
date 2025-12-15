@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <title>Manoir avec Lanterne</title>
+    <link rel="stylesheet" href="../styles/jumpscare.css">
+</head>
+
+<body>
+<body>
+    <div id="video-container">
+        <video id="motion-video" autoplay muted playsinline>
+            <source src="../videos/jumpscare.mp4" type="video/mp4">
+        </video>
+
+        <button class="sound-toggle" id="soundToggle" aria-label="Son">
+            <svg class="icon-sound icon-on" viewBox="0 0 64 64">
+                <path d="M12 24h10l14-12v40L22 40H12z" fill="currentColor" />
+                <path d="M44 20c4 4 4 20 0 24" fill="none" stroke="currentColor" stroke-width="4"
+                    stroke-linecap="round" />
+                <path d="M52 14c8 8 8 28 0 36" fill="none" stroke="currentColor" stroke-width="4"
+                    stroke-linecap="round" />
+            </svg>
+
+            <svg class="icon-sound icon-off" viewBox="0 0 64 64">
+                <path d="M12 24h10l14-12v40L22 40H12z" fill="currentColor" />
+                <line x1="44" y1="20" x2="58" y2="44" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+                <line x1="58" y1="20" x2="44" y2="44" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+            </svg>
+        </button>
+    </div>
+
+    <script src="../scripts/jumpscare.js"></script>
+</body>
+
+</html>

@@ -26,7 +26,6 @@ container.addEventListener('mousemove', e => {
     lightGlow.style.setProperty('--mouse-y', `${percentY}%`);
 });
 
-// Déplacement horizontal de la lanterne qui suit la souris
 document.addEventListener('mousemove', e => {
     const mouseXPercent = (e.clientX / window.innerWidth) * 100;
     lanternHand.style.left = `${mouseXPercent}%`;
@@ -46,6 +45,6 @@ clickButton.addEventListener('click', () => {
     document.body.style.opacity = '0';
 
     setTimeout(() => {
-        window.location.href = "chambre.html";
+        window.location.href = "jumpscare.html";
     }, 800);
 });

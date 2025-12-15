@@ -32,7 +32,6 @@ document.addEventListener('mouseup', () => {
     matchHead.style.transition = 'left 0.3s ease, box-shadow 0.3s ease';
 
     if (currentLeft >= threshold) {
-        // Allumette allumée
         currentLeft = maxLeft;
         matchHead.style.left = maxLeft + 'px';
         matchHead.classList.add('lit');

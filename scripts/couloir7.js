@@ -19,7 +19,6 @@ if (backgroundSound) {
 
 container.addEventListener('mousemove', e => {
     const rect = container.getBoundingClientRect()
-
     const percentX = (e.clientX / rect.width) * 100
     const percentY = (e.clientY / rect.height) * 100
 
@@ -30,8 +29,7 @@ container.addEventListener('mousemove', e => {
 })
 
 document.addEventListener('mousemove', e => {
-    const mouseXPercent = (e.clientX / window.innerWidth) * 100
-    lanternHand.style.left = `${mouseXPercent}%`
+    lanternHand.style.left = `${(e.clientX / window.innerWidth) * 100}%`
 })
 
 window.addEventListener('load', () => {
@@ -46,19 +44,11 @@ if (soundToggle && backgroundSound) {
         soundEnabled = !soundEnabled
 
         if (soundEnabled) {
-            backgroundSound.play()
-                .then(() => {
-                    soundToggle.classList.add('active')
-                    console.log('son activé')
-                })
-                .catch(err => {
-                    console.log('audio bloqué', err)
-                })
+            backgroundSound.play().catch(() => {})
+            soundToggle.classList.add('active')
         } else {
             backgroundSound.pause()
-            backgroundSound.currentTime = 0
             soundToggle.classList.remove('active')
-            console.log('son coupé')
         }
     })
 }
@@ -68,20 +58,8 @@ if (clickButton) {
         eyelidTop.classList.add('closing')
         eyelidBottom.classList.add('closing')
 
-    setTimeout(() => {
-        window.location.href = "jumpscare.html";
-    }, 1200);
-});
+        setTimeout(() => {
+            window.location.href = 'jumpscare.html'
+        }, 900)
+    })
 }
-
-window.addEventListener('beforeunload', () => {
-    if (backgroundSound) {
-        backgroundSound.pause()
-        backgroundSound.currentTime = 0
-    }
-})
-
-clickButton.addEventListener('click', () => {
-    eyelidTop.classList.add('closing');
-    eyelidBottom.classList.add('closing');
-});

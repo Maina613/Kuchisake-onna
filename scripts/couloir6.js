@@ -1,51 +1,69 @@
-const container = document.getElementById('container');
-const interiorLight = document.getElementById('interior-light');
-const lightGlow = document.getElementById('light-glow');
-const lanternHand = document.getElementById('lantern-hand');
+const container = document.getElementById('container')
+const interiorLight = document.getElementById('interior-light')
+const lightGlow = document.getElementById('light-glow')
+const lanternHand = document.getElementById('lantern-hand')
 
-const MARGIN_X = 0;
-const MARGIN_Y = 0;
+const clickButton = document.querySelector('.click-button')
+const maskOverlay = document.getElementById('mask-overlay')
+const maskButton = document.getElementById('mask-button')
 
-container.addEventListener('mousemove', e => {
-    const rect = container.getBoundingClientRect();
+const soundToggle = document.getElementById('soundToggle')
+const voiceOver = document.getElementById('VoiceOver')
 
-    const minX = rect.width * (MARGIN_X / 100);
-    const maxX = rect.width * (1 - MARGIN_X / 100);
-    const minY = rect.height * (MARGIN_Y / 100);
-    const maxY = rect.height * (1 - MARGIN_Y / 100);
+let soundEnabled = false
 
-    const targetX = Math.max(minX, Math.min(maxX, e.clientX));
-    const targetY = Math.max(minY, Math.min(maxY, e.clientY));
+if (voiceOver) {
+    voiceOver.volume = 0.9
+}
 
-    const percentX = (targetX / rect.width) * 100;
-    const percentY = (targetY / rect.height) * 100;
+container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect()
 
-    interiorLight.style.setProperty('--mouse-x', `${percentX}%`);
-    interiorLight.style.setProperty('--mouse-y', `${percentY}%`);
-    lightGlow.style.setProperty('--mouse-x', `${percentX}%`);
-    lightGlow.style.setProperty('--mouse-y', `${percentY}%`);
-});
+    const percentX = (e.clientX / rect.width) * 100
+    const percentY = (e.clientY / rect.height) * 100
 
-// Déplacement horizontal de la lanterne qui suit la souris
-document.addEventListener('mousemove', e => {
-    const mouseXPercent = (e.clientX / window.innerWidth) * 100;
-    lanternHand.style.left = `${mouseXPercent}%`;
-});
+    interiorLight.style.setProperty('--mouse-x', `${percentX}%`)
+    interiorLight.style.setProperty('--mouse-y', `${percentY}%`)
+    lightGlow.style.setProperty('--mouse-x', `${percentX}%`)
+    lightGlow.style.setProperty('--mouse-y', `${percentY}%`)
+})
+
+document.addEventListener('mousemove', (e) => {
+    const mouseXPercent = (e.clientX / window.innerWidth) * 100
+    lanternHand.style.left = `${mouseXPercent}%`
+})
 
 window.addEventListener('load', () => {
-    interiorLight.style.setProperty('--mouse-x', '50%');
-    interiorLight.style.setProperty('--mouse-y', '50%');
-    lightGlow.style.setProperty('--mouse-x', '50%');
-    lightGlow.style.setProperty('--mouse-y', '50%');
-});
+    interiorLight.style.setProperty('--mouse-x', '50%')
+    interiorLight.style.setProperty('--mouse-y', '50%')
+    lightGlow.style.setProperty('--mouse-x', '50%')
+    lightGlow.style.setProperty('--mouse-y', '50%')
+})
 
-const clickButton = document.querySelector('.click-button');
+if (soundToggle && voiceOver) {
+    soundToggle.addEventListener('click', () => {
+        soundEnabled = !soundEnabled
+
+        if (soundEnabled) {
+            voiceOver.play().then(() => {
+                soundToggle.classList.add('active')
+            }).catch(() => {})
+        } else {
+            voiceOver.pause()
+            soundToggle.classList.remove('active')
+        }
+    })
+}
 
 clickButton.addEventListener('click', () => {
-    document.body.style.transition = 'opacity 0.8s ease';
-    document.body.style.opacity = '0';
+    maskOverlay.style.display = 'flex'
+})
+
+maskButton.addEventListener('click', () => {
+    document.body.style.transition = 'opacity 0.8s ease'
+    document.body.style.opacity = '0'
 
     setTimeout(() => {
-        window.location.href = "couloir7.html";
-    }, 800);
-});
+        window.location.href = 'couloir7.html'
+    }, 800)
+})

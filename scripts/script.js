@@ -1,4 +1,3 @@
-// ==================== CONFIGURATION ====================
 const CONFIG = {
     triggerWarning: {
         scrollThreshold: 50,
@@ -35,7 +34,6 @@ const CONFIG = {
     }
 };
 
-// ==================== ÉTAT GLOBAL ====================
 const state = {
     warningDismissed: false,
     touchStartY: 0,
@@ -43,7 +41,6 @@ const state = {
     thunderTimeout: null
 };
 
-// ==================== ÉLÉMENTS DOM ====================
 const elements = {
     triggerWarning: null,
     rainContainer: null,
@@ -59,7 +56,6 @@ const elements = {
     scrollIndicator: null
 };
 
-// ==================== UTILITAIRES ====================
 const utils = {
     clamp: (value, min, max) => Math.min(Math.max(value, min), max),
     
@@ -70,7 +66,6 @@ const utils = {
     getElementById: (id) => document.getElementById(id)
 };
 
-// ==================== TRIGGER WARNING ====================
 const triggerWarning = {
     init() {
         elements.triggerWarning = utils.getElementById('trigger-warning');
@@ -131,7 +126,6 @@ const triggerWarning = {
     }
 };
 
-// ==================== PLUIE ====================
 const rain = {
     init() {
         elements.rainContainer = utils.getElementById('rainContainer');

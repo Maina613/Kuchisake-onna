@@ -124,3 +124,58 @@ body {
         opacity: 1;
     }
 }
+
+#credits {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 100%);
+    display: none;
+    overflow: hidden;
+    z-index: 500;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.credits-content {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 90%;
+    animation: creditsScroll 35s linear forwards;
+}
+
+.credits-content h1 {
+    font-size: 24px;
+    letter-spacing: 0.35em;
+    margin-bottom: 12px;
+    font-family: playfair display, serif;
+}
+
+.credits-content h2 {
+    font-size: 20px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-family: playfair display, serif;
+}
+
+.credits-content p {
+    font-size: 16px;
+    opacity: 0.75;
+    margin: 6px 0;
+}
+
+.copyright {
+    font-size: 10px;
+    opacity: 0.4;
+    margin-top: 60px;
+}
+
+@keyframes creditsScroll {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-200%);
+    }
+}

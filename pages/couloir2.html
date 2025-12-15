@@ -18,7 +18,22 @@
         <div class="click-button"></div>
         <div class="click-label">click me</div>
     </div>
+
+        <button class="sound-toggle" id="soundToggle" aria-label="Son">
+        <svg class="icon-sound icon-on" viewBox="0 0 64 64">
+            <path d="M12 24h10l14-12v40L22 40H12z" fill="currentColor" />
+            <path d="M44 20c4 4 4 20 0 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+            <path d="M52 14c8 8 8 28 0 36" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+        </svg>
+
+        <svg class="icon-sound icon-off" viewBox="0 0 64 64">
+            <path d="M12 24h10l14-12v40L22 40H12z" fill="currentColor" />
+            <line x1="44" y1="20" x2="58" y2="44" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+            <line x1="58" y1="20" x2="44" y2="44" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+        </svg>
+    </button>
     
+    <audio id="BackgroundSound" src="../sounds/backgroundnoise1.mp3" preload="auto"></audio>
     <img id="lantern-hand" src="../images/candle.png" alt="Main avec lanterne">
 
     <script src="../scripts/couloir2.js"></script>

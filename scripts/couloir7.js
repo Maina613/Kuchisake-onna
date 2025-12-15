@@ -1,50 +1,87 @@
-const container = document.getElementById('container');
-const interiorLight = document.getElementById('interior-light');
-const lightGlow = document.getElementById('light-glow');
-const lanternHand = document.getElementById('lantern-hand');
+const container = document.getElementById('container')
+const interiorLight = document.getElementById('interior-light')
+const lightGlow = document.getElementById('light-glow')
+const lanternHand = document.getElementById('lantern-hand')
 
-const MARGIN_X = 0;
-const MARGIN_Y = 0;
+const clickButton = document.querySelector('.click-button')
+const eyelidTop = document.querySelector('.eyelid-top')
+const eyelidBottom = document.querySelector('.eyelid-bottom')
+
+const soundToggle = document.getElementById('soundToggle')
+const backgroundSound = document.getElementById('BackgroundSound')
+
+let soundEnabled = false
+
+if (backgroundSound) {
+    backgroundSound.volume = 0.5
+    backgroundSound.loop = true
+}
 
 container.addEventListener('mousemove', e => {
-    const rect = container.getBoundingClientRect();
+    const rect = container.getBoundingClientRect()
 
-    const minX = rect.width * (MARGIN_X / 100);
-    const maxX = rect.width * (1 - MARGIN_X / 100);
-    const minY = rect.height * (MARGIN_Y / 100);
-    const maxY = rect.height * (1 - MARGIN_Y / 100);
+    const percentX = (e.clientX / rect.width) * 100
+    const percentY = (e.clientY / rect.height) * 100
 
-    const targetX = Math.max(minX, Math.min(maxX, e.clientX));
-    const targetY = Math.max(minY, Math.min(maxY, e.clientY));
-
-    const percentX = (targetX / rect.width) * 100;
-    const percentY = (targetY / rect.height) * 100;
-
-    interiorLight.style.setProperty('--mouse-x', `${percentX}%`);
-    interiorLight.style.setProperty('--mouse-y', `${percentY}%`);
-    lightGlow.style.setProperty('--mouse-x', `${percentX}%`);
-    lightGlow.style.setProperty('--mouse-y', `${percentY}%`);
-});
+    interiorLight.style.setProperty('--mouse-x', `${percentX}%`)
+    interiorLight.style.setProperty('--mouse-y', `${percentY}%`)
+    lightGlow.style.setProperty('--mouse-x', `${percentX}%`)
+    lightGlow.style.setProperty('--mouse-y', `${percentY}%`)
+})
 
 document.addEventListener('mousemove', e => {
-    const mouseXPercent = (e.clientX / window.innerWidth) * 100;
-    lanternHand.style.left = `${mouseXPercent}%`;
-});
+    const mouseXPercent = (e.clientX / window.innerWidth) * 100
+    lanternHand.style.left = `${mouseXPercent}%`
+})
 
 window.addEventListener('load', () => {
-    interiorLight.style.setProperty('--mouse-x', '50%');
-    interiorLight.style.setProperty('--mouse-y', '50%');
-    lightGlow.style.setProperty('--mouse-x', '50%');
-    lightGlow.style.setProperty('--mouse-y', '50%');
-});
+    interiorLight.style.setProperty('--mouse-x', '50%')
+    interiorLight.style.setProperty('--mouse-y', '50%')
+    lightGlow.style.setProperty('--mouse-x', '50%')
+    lightGlow.style.setProperty('--mouse-y', '50%')
+})
 
-const clickButton = document.querySelector('.click-button');
+if (soundToggle && backgroundSound) {
+    soundToggle.addEventListener('click', () => {
+        soundEnabled = !soundEnabled
 
-clickButton.addEventListener('click', () => {
-    document.body.style.transition = 'opacity 0.8s ease';
-    document.body.style.opacity = '0';
+        if (soundEnabled) {
+            backgroundSound.play()
+                .then(() => {
+                    soundToggle.classList.add('active')
+                    console.log('son activé')
+                })
+                .catch(err => {
+                    console.log('audio bloqué', err)
+                })
+        } else {
+            backgroundSound.pause()
+            backgroundSound.currentTime = 0
+            soundToggle.classList.remove('active')
+            console.log('son coupé')
+        }
+    })
+}
+
+if (clickButton) {
+    clickButton.addEventListener('click', () => {
+        eyelidTop.classList.add('closing')
+        eyelidBottom.classList.add('closing')
 
     setTimeout(() => {
         window.location.href = "jumpscare.html";
-    }, 800);
+    }, 1200);
+});
+}
+
+window.addEventListener('beforeunload', () => {
+    if (backgroundSound) {
+        backgroundSound.pause()
+        backgroundSound.currentTime = 0
+    }
+})
+
+clickButton.addEventListener('click', () => {
+    eyelidTop.classList.add('closing');
+    eyelidBottom.classList.add('closing');
 });

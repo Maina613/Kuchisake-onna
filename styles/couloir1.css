@@ -293,3 +293,63 @@ body {
 .sound-toggle:not(.active) .icon-off {
     display: block;
 }
+
+#progress-tracker {
+    position: fixed;
+    left: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 42vh;
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.tracker-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.tracker-dot-top {
+    background: #e53935;
+    box-shadow:
+        0 0 6px rgba(229, 57, 53, 0.9),
+        0 0 14px rgba(229, 57, 53, 0.6),
+        0 0 28px rgba(229, 57, 53, 0.35);
+}
+
+.tracker-dot-bottom {
+    background: #ffffff;
+    margin-top: 6px;
+    box-shadow:
+        0 0 4px rgba(255, 255, 255, 0.9),
+        0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.tracker-bar {
+    flex: 1;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 8px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.tracker-fill {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(
+        to top,
+        rgba(229, 57, 53, 1),
+        rgba(255, 255, 255, 0.8)
+    );
+    box-shadow:
+        0 0 10px rgba(229, 57, 53, 0.6);
+    transition: height 0.6s ease;
+}

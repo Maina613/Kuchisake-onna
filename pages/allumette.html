@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="../images/favicon.png" />
-    <title>Kuchisake-onna</title>
-    <link rel="stylesheet" href="../styles/style-allumette.css" />
-  </head>
 
-  <body>
-    <img
-      id="interior-image"
-      src="../images/interior.png"
-      alt="Interieur sombre"
-    />
-    <div class="container">
-      <div class="match-stick"></div>
-      <div class="match-head" id="matchHead"></div>
-      <div class="flame" id="flame">
-        <img src="../images/flame.svg" alt="Flamme">
-      </div>
-    </div>
-    <div class="instruction" id="instruction">
-      Faites glisser le point blanc vers la droite pour allumer l'allumette
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <title>Kuchisake-onna</title>
+  <link rel="stylesheet" href="../styles/style-allumette.css" />
+</head>
+
+<body>
+  <div id="progress-tracker">
+    <div class="tracker-dot tracker-dot-top"></div>
+
+    <div class="tracker-bar">
+      <div class="tracker-fill"></div>
     </div>
 
-    <script src="../scripts/script-allumette.js"></script>
-  </body>
+    <div class="tracker-dot tracker-dot-bottom"></div>
+  </div>
+  <img id="interior-image" src="../images/interior.png" alt="Interieur sombre" />
+  <div class="container">
+    <div class="match-stick"></div>
+    <div class="match-head" id="matchHead"></div>
+    <div class="flame" id="flame">
+      <img src="../images/flame.svg" alt="Flamme">
+    </div>
+  </div>
+  <div class="instruction" id="instruction">
+    Faites glisser le point blanc vers la droite pour allumer l'allumette
+  </div>
+
+  <script src="../scripts/script-allumette.js"></script>
+</body>
+
 </html>

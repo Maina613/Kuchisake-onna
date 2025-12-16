@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,17 @@
     <title>Kuchisake-onna</title>
     <link rel="stylesheet" href="../styles/seppuku.css">
 </head>
+
 <body>
+<div id="progress-tracker">
+    <div class="tracker-dot tracker-dot-top"></div>
+
+    <div class="tracker-bar">
+        <div class="tracker-fill"></div>
+    </div>
+
+    <div class="tracker-dot tracker-dot-bottom"></div>
+</div>
     <div id="video-container">
         <video id="motion-video" autoplay muted playsinline>
             <source src="../videos/Seppuku.mp4" type="video/mp4">
@@ -39,4 +50,5 @@
 
     <script src="../scripts/seppuku.js"></script>
 </body>
+
 </html>

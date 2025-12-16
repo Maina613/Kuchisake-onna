@@ -69,7 +69,7 @@ if (clickButton) {
         eyelidBottom.classList.add('closing')
 
         setTimeout(() => {
-            window.location.href = "samouraï.html"
+            window.location.href = "samourai.html"
         }, 1200)
     })
 }
@@ -80,3 +80,32 @@ window.addEventListener('beforeunload', () => {
         backgroundSound.currentTime = 0
     }
 })
+
+const steps = [
+    'index.html',
+    'allumette.html',
+    'couloir1.html',
+    'AKAE.html',
+    'couloir2.html',
+    'onryo.html',
+    'couloir3.html',
+    'samourai.html',
+    'couloir4.html',
+    'seppuku.html',
+    'couloir5.html',
+    'couloir6.html',
+    'couloir7.html',
+    'jumpscare.html'
+]
+
+const fill = document.querySelector('.tracker-fill')
+
+if (fill) {
+    const currentPage = window.location.pathname.split('/').pop()
+    const index = steps.indexOf(currentPage)
+
+    if (index !== -1) {
+        const progress = (index / (steps.length - 1)) * 100
+        fill.style.height = `${progress}%`
+    }
+}

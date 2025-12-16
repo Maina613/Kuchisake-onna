@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../images/favicon.png">
     <title>Kuchisake-onna</title>
-    <link rel="stylesheet" href="../styles/samouraï.css">
+    <link rel="stylesheet" href="../styles/samourai.css">
 </head>
+
 <body>
-<div id="video-container">
+<div id="progress-tracker">
+    <div class="tracker-dot tracker-dot-top"></div>
+
+    <div class="tracker-bar">
+        <div class="tracker-fill"></div>
+    </div>
+
+    <div class="tracker-dot tracker-dot-bottom"></div>
+</div>
+    <div id="video-container">
         <video id="motion-video" autoplay muted playsinline>
             <source src="../videos/Samouraï.mp4" type="video/mp4">
         </video>
@@ -37,6 +48,7 @@
         </div>
     </div>
 
-    <script src="../scripts/samouraï.js"></script>
+    <script src="../scripts/samourai.js"></script>
 </body>
+
 </html>

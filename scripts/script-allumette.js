@@ -45,7 +45,6 @@ document.addEventListener('mouseup', () => {
 
     body.classList.add('lit')
 
-    // Changement de page direct sans transition visible
     setTimeout(() => {
       window.location.href = 'couloir1.html'
     }, 200)

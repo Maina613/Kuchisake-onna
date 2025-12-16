@@ -49,16 +49,16 @@ if (soundToggle && backgroundSound) {
             backgroundSound.play()
                 .then(() => {
                     soundToggle.classList.add('active')
-                    console.log('🔊 son activé')
+                    console.log('son activé')
                 })
                 .catch(err => {
-                    console.log('❌ audio bloqué', err)
+                    console.log('audio bloqué', err)
                 })
         } else {
             backgroundSound.pause()
             backgroundSound.currentTime = 0
             soundToggle.classList.remove('active')
-            console.log('🔇 son coupé')
+            console.log('son coupé')
         }
     })
 }

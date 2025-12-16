@@ -102,7 +102,7 @@ body {
 .click-button {
     position: absolute;
     top: 33%;
-    left: 46%;
+    left: 45%;
     width: 20px;
     height: 20px;
     transform: translate(-50%, -50%) rotate(18deg);
@@ -149,7 +149,7 @@ body {
 .click-label {
     position: absolute;
     top: calc(30% + 46px);
-    left: 46%;
+    left: 45%;
     transform: translateX(-50%);
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 9px;
@@ -217,6 +217,7 @@ body {
     height: auto;
     z-index: 5; 
     object-fit: contain;
+    opacity: 85%;
 }
 
 #ombre-image {
